@@ -208,9 +208,9 @@ class RegisterViewController: UIViewController {
                                         return
                                     }
 
-            guard !exists else {
+            guard exists else {
                 // user already exists
-                strongSelf.alertUserLoginError(message: "User already exists")
+                strongSelf.alertUserLoginError(message: "User already exists.")
                 return
             }
             FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in

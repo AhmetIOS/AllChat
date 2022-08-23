@@ -135,6 +135,7 @@ class LoginViewController: UIViewController {
             
             guard let result = authResult, error == nil else {
                 print("Login error with email \(email)")
+                self!.alertUserLoginError(message: "Please check your email address and password")
                 return
             }
             let user = result.user
@@ -145,9 +146,9 @@ class LoginViewController: UIViewController {
         // firebase Log In
     }
     
-    func alertUserLoginError() {
+    func alertUserLoginError(message: String = "Please enter all information to log in") {
         let alert = UIAlertController(title: "Woops",
-                                      message: "Please enter all information to log in",
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss",
                                       style: .cancel,

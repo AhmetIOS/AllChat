@@ -12,7 +12,8 @@ class ConversationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        tabBarController?.tabBar.backgroundColor = UIColor.systemGray
+       
         DatabaseManager.shared
     }
 
